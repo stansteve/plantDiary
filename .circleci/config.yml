@@ -8,6 +8,9 @@ jobs:
       - image: cimg/android:2022.09
     steps:
       - checkout
+      - run:
+          name: chmod permissions
+          command: chmod +x ./gradlew
       - run: ./gradlew androidDependencies
       - run: ./gradlew lint test
       
